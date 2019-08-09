@@ -1,0 +1,76 @@
+<?php
+ob_start();
+
+$responses = array();
+
+foreach ($this->head as $nome => $header) {
+
+	if ($nome != 'title') {
+
+		if (is_array($header)) {
+
+			foreach ($header as $propriedade) {
+
+				if ($nome == 'response') {
+
+					array_push($responses, $propriedade);
+				} else {
+
+					$conteudo = '';
+
+					foreach ($propriedade as $chave => $valor) {
+
+						if (in_array($chave, array('src', 'href'))) {
+							$valor = $this -> baseUrl() . $valor;
+						}
+
+						$conteudo .= "{$chave}=\"{$valor}\" ";
+					}
+
+					echo PHP_EOL;
+
+					if ($nome == 'script') {
+						echo "\t\t<{$nome} {$conteudo}></{$nome}>";
+					} else {
+						echo "\t\t<{$nome} {$conteudo}/>";
+					}
+				}
+			}
+		}
+	}
+}
+
+$headers = ob_get_contents();
+ob_end_clean();
+
+foreach ($responses as $response) {
+	header($response);
+}
+
+echo '<?xml version="1.0" encoding="utf-8" ?>'.PHP_EOL ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Phailom Default Interface</title>
+		
+		<meta name="keywords" content="syllom, phailom, sailom, framework, php" />
+		<meta name="Generator" content="joao, paulo, araujo" />
+		<meta name="robots" content="index, follow" />
+
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="nocache" />
+
+		<?php echo $headers.PHP_EOL.PHP_EOL ?>
+		
+	</head>
+	
+	<body>
+	
+		<?php echo PHP_EOL."\t\t".$this -> body.PHP_EOL; ?>
+
+	</body>
+
+</html>

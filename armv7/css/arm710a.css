@@ -1,0 +1,119 @@
+body {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+#titulo {
+	border-bottom: 1px dashed;
+	font-size: 50px;
+	text-align: right;
+	width: 100%;
+	margin-bottom: 5px;
+	vertical-align: top;
+}
+
+.subtitulo {
+	border-bottom: 1px dashed;
+	font-size: 18px;
+	text-align: left;
+	margin-bottom: 7px;
+	vertical-align: top;
+}
+
+#principal {
+	height: 400px;
+}
+
+.linha {
+	clear: both;
+	height: 350px;
+}
+
+#container_codigo {
+	position: absolute;
+	left: 5%;
+	padding: 5px;
+	margin: 30px 5px;
+	border: 1px;
+	border-top-width: 15px;
+	border-color: #000000;
+	border-style: solid;
+	width: 28%;
+	height: 300px;
+}
+
+#container_execucao {
+	position: absolute;
+	left: 43%;
+	padding: 5px;
+	margin: 30px 5px;
+	border: 1px;
+	border-top-width: 15px;
+	border-color: #000000;
+	border-style: solid;
+	width: 48%;
+	height: 300px;
+	overflow: auto;
+}
+
+#container_pipeline,#container_dados {
+	position: absolute;
+	left: 5%;
+	padding: 5px;
+	margin: 30px 5px;
+	border: 1px;
+	border-top-width: 15px;
+	border-color: #000000;
+	border-style: solid;
+	width: 38%;
+	height: 300px;
+	overflow: auto;
+}
+
+#container_registradores,#container_instrucoes{
+	position: absolute;
+	left: 53%;
+	padding: 5px;
+	margin: 30px 5px;
+	border: 1px;
+	border-top-width: 15px;
+	border-color: #000000;
+	border-style: solid;
+	width: 38%;
+	height: 300px;
+	overflow: auto;
+}
+
+#conteudo_resultado,#conteudo_pipeline,#conteudo_registradores,#conteudo_dados,#conteudo_instrucoes {
+	width: 98%;
+	position: absolute;
+}
+
+#text_entrada {
+	vertical-align: middle;
+	width: 100%;
+	height: 240px;
+	border: 1px solid black;
+	overflow: auto;
+}
+
+.botao {
+	margin-top: 5px;
+	width: 80px;
+	border: 1px dotted;
+}
+
+#container_grupo {
+	background:#FFFFFF;
+	position: fixed;
+	border-top: 1px dashed;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	bottom: 0;
+	width: 100%;
+}
+
+.carregando {
+	text-align: center;
+}
