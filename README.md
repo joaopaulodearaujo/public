@@ -8,4 +8,4 @@ A public repository with some code I've written and it's worth sharing.
 
 - **smuggler** - A small C project for simulating reliable transport (fixed-window size) through UDP connections. It simulates link and physical layers. Send/receive operations are coordinated by different threads.
 
-**More to come...** 
+**More to come...**
